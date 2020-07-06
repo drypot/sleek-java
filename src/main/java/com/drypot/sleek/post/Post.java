@@ -1,5 +1,6 @@
 package com.drypot.sleek.post;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Builder
 @NoArgsConstructor(staticName = "of")
+@AllArgsConstructor(staticName = "of")
 public class Post {
 
     private int id;
