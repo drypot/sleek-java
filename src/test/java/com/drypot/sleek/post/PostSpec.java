@@ -11,7 +11,7 @@ public class PostSpec {
     @Test
     @DisplayName("we can create no arg post")
     public void createPost() {
-        Post p = Post.of();
+        Post p = new Post();
         assertNotNull(p);
     }
 
@@ -27,7 +27,7 @@ public class PostSpec {
     @Test
     @DisplayName("we can set post properties")
     public void setProperties() {
-        Post p = Post.of();
+        Post p = new Post();
 
         assertEquals(0, p.getId());
         p.setId(10);

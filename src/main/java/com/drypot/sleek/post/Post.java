@@ -11,8 +11,8 @@ import java.util.List;
 
 @Data
 @Builder
-@NoArgsConstructor(staticName = "of")
-@AllArgsConstructor(staticName = "of")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Post {
 
     private int id;
