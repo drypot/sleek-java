@@ -1,5 +1,6 @@
-package com.drypot.sleek.post;
+package com.drypot.sleek;
 
+import com.drypot.sleek.Post;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -40,5 +41,4 @@ public class PostSpec {
 
     // TODO: test addFileName, removeFileName
 
-    // TODO: isFirstThread
 }

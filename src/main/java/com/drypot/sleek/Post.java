@@ -1,4 +1,4 @@
-package com.drypot.sleek.post;
+package com.drypot.sleek;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,7 +34,4 @@ public class Post {
         fileNameList.remove(name);
     }
 
-    public boolean isFirstPost(PostThread t) {
-        return cdate.equals(t.getCdate());
-    }
 }

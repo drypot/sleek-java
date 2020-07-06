@@ -1,5 +1,6 @@
-package com.drypot.sleek.post;
+package com.drypot.sleek;
 
+import com.drypot.sleek.Post;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,4 +23,7 @@ public class PostThread {
     private String userName;
     private String title;
 
+    public boolean postIsFirstPost(Post p) {
+        return cdate.equals(p.getCdate());
+    }
 }

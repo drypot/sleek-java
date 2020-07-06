@@ -1,5 +1,6 @@
-package com.drypot.sleek.post;
+package com.drypot.sleek;
 
+import com.drypot.sleek.PostThread;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
