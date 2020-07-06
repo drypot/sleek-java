@@ -14,8 +14,6 @@ Java, Spring MVC, MySQL.
 
 ## History
 
-2020.04 Java, Spring MVC, Thymeleaf, MySQL.
-
 2020.04 Java 버전을 다시 만들기 시작.
 
 2019.04 Node.js, MySQL, MongoDB 를 MySQL 로 이전.
