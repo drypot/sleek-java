@@ -1,26 +1,23 @@
 package com.drypot.sleek;
 
-import com.drypot.sleek.Post;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Post")
-public class PostSpec {
+public class PostTest {
 
     @Test
-    @DisplayName("we can create no arg post")
+    @DisplayName("we can create post")
     public void createPost() {
         Post p = new Post();
-        assertNotNull(p);
+        assertEquals(0, p.getId());
     }
 
     @Test
     @DisplayName("we can create post with builder")
     public void createPostWithBuilder() {
         Post p = Post.builder().id(10).text("hello").build();
-        assertNotNull(p);
         assertEquals(10, p.getId());
         assertEquals("hello", p.getText());
     }

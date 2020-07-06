@@ -6,14 +6,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("PostThread")
-public class PostThreadSpec {
+public class PostThreadTest {
 
     @Test
-    @DisplayName("we can create no arg postThread")
+    @DisplayName("we can create postThread")
     public void createPost() {
         PostThread t = new PostThread();
-        assertNotNull(t);
+        assertEquals(0, t.getId());
     }
 
 }
