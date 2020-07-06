@@ -40,4 +40,5 @@ public class PostSpec {
 
     // TODO: test addFileName, removeFileName
 
+    // TODO: isFirstThread
 }

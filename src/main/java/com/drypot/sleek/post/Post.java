@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Post {
 
     private int id;
@@ -32,5 +32,9 @@ public class Post {
 
     public void removeFileName(String name) {
         fileNameList.remove(name);
+    }
+
+    public boolean isFirstPost(PostThread t) {
+        return cdate.equals(t.getCdate());
     }
 }
