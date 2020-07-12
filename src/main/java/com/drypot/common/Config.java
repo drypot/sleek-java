@@ -33,4 +33,12 @@ public class Config {
         c.setMysqlPassword(c.jsonRoot.get("mysqlPassword").asText());
         return c;
     }
+
+    private static Config cache;
+    public static Config fromCache() throws IOException {
+        if (cache == null) {
+            cache = from(CommandLineArguments.getConfigPath());
+        }
+        return cache;
+    }
 }

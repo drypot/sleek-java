@@ -37,4 +37,17 @@ public class ConfigTest {
         assertEquals("drypot", c.getMysqlUser());
         assertEquals("", c.getMysqlPassword());
     }
+
+    @Test
+    @DisplayName("we can load config from cache")
+    public void loadConfigFromCache() throws IOException {
+        Config c = Config.fromCache();
+        assertEquals("sleek test", c.getAppName());
+        assertEquals(8001, c.getAppPort());
+        assertEquals("http://file.sleek.dev:8080", c.getUploadSite());
+        assertEquals("upload/sleek-test", c.getUploadDir());
+        assertEquals("sleek_test", c.getMysqlDatabase());
+        assertEquals("drypot", c.getMysqlUser());
+        assertEquals("", c.getMysqlPassword());
+    }
 }
