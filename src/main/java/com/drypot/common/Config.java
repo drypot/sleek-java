@@ -41,11 +41,11 @@ public class Config {
         return c;
     }
 
-    private static Config cache;
-    public static Config fromCache() throws IOException {
-        if (cache == null) {
-            cache = from(CommandLineArguments.getConfigPath());
+    private static Config defaultConfig;
+    public static Config getDefault() throws IOException {
+        if (defaultConfig == null) {
+            defaultConfig = from(CommandLineArguments.getConfigPath());
         }
-        return cache;
+        return defaultConfig;
     }
 }

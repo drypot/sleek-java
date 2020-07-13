@@ -1,6 +1,5 @@
 package com.drypot.common;
 
-import com.drypot.common.Config;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -39,9 +38,9 @@ public class ConfigTest {
     }
 
     @Test
-    @DisplayName("we can load config from cache")
+    @DisplayName("we can get default config")
     public void loadConfigFromCache() throws IOException {
-        Config c = Config.fromCache();
+        Config c = Config.getDefault();
         assertEquals("app test", c.getAppName());
         assertEquals(8001, c.getAppPort());
         assertEquals("http://file.sleek.dev:8080", c.getUploadSite());
@@ -54,7 +53,7 @@ public class ConfigTest {
     @Test
     @DisplayName("we can use getJsonNode")
     void getJsonNode() throws IOException {
-        Config c = Config.fromCache();
+        Config c = Config.getDefault();
         assertEquals("app test", c.getJsonNode("appName").asText());
         assertEquals(8001, c.getJsonNode("appPort").asInt());
     }
