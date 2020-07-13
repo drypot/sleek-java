@@ -48,4 +48,16 @@ class CategoryListTest {
         assertEquals(104, c.getId());
         assertEquals("health", c.getName());
     }
+
+    @Test
+    @DisplayName("we can test contains")
+    void contains() {
+        CategoryList l = new CategoryList();
+        l.add(new Category(100, "freetalk"));
+        l.add(new Category(104, "health"));
+
+        assertTrue(l.contains(100));
+        assertTrue(l.contains(104));
+        assertFalse(l.contains(300));
+    }
 }
