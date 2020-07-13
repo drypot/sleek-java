@@ -33,7 +33,7 @@ class CategoryListUserMapTest {
     @Test
     @DisplayName("we can load categoryListUserMap from Json")
     void loadFromJson() throws IOException {
-        Config config = Config.fromCache();
+        Config config = Config.getDefault();
         CategoryListUserMap map = CategoryListUserMap.from(config.getJsonNode("categories"));
         CategoryList l;
 
