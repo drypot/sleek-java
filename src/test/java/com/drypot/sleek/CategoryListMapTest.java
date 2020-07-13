@@ -8,18 +8,18 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CategoryListUserMapTest {
+class CategoryListMapTest {
 
     @Test
-    @DisplayName("we can create categoryListUserMap")
+    @DisplayName("we can create categoryListMap")
     void create() {
-        CategoryListUserMap map = new CategoryListUserMap();
+        CategoryListMap map = new CategoryListMap();
     }
 
     @Test
-    @DisplayName("we can put categoryList to userMap")
+    @DisplayName("we can put categoryList")
     void add() {
-        CategoryListUserMap map = new CategoryListUserMap();
+        CategoryListMap map = new CategoryListMap();
         CategoryList l1 = new CategoryList();
         CategoryList l2 = new CategoryList();
 
@@ -31,10 +31,10 @@ class CategoryListUserMapTest {
     }
 
     @Test
-    @DisplayName("we can load categoryListUserMap from Json")
+    @DisplayName("we can load categoryListMap from Json")
     void loadFromJson() throws IOException {
         Config config = Config.getDefault();
-        CategoryListUserMap map = CategoryListUserMap.from(config.getJsonNode("categories"));
+        CategoryListMap map = CategoryListMap.from(config.getJsonNode("categories"));
         CategoryList l;
 
         l = map.get("user");
@@ -47,6 +47,19 @@ class CategoryListUserMapTest {
         assertTrue(l.contains(100));
         assertTrue(l.contains(104));
         assertTrue(l.contains(60));
+        assertFalse(l.contains(40));
+    }
+
+    @Test
+    @DisplayName("we can use default categoryListMap")
+    void useDefaultMap() throws IOException {
+        CategoryListMap map = CategoryListMap.getDefault();
+        CategoryList l;
+
+        l = map.get("user");
+        assertTrue(l.contains(100));
+        assertTrue(l.contains(104));
+        assertFalse(l.contains(60));
         assertFalse(l.contains(40));
     }
 }

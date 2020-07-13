@@ -1,28 +1,30 @@
 package com.drypot.sleek;
 
+import com.drypot.common.Config;
 import com.fasterxml.jackson.databind.JsonNode;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CategoryListUserMap {
+public class CategoryListMap {
 
     private Map<String, CategoryList> map;
 
-    public CategoryListUserMap() {
+    public CategoryListMap() {
         map = new HashMap<>();
     }
 
-    public void put(String user1, CategoryList l1) {
-        map.put(user1, l1);
+    public void put(String userName, CategoryList categoryList) {
+        map.put(userName, categoryList);
     }
 
-    public CategoryList get(String name) {
-        return map.get(name);
+    public CategoryList get(String userName) {
+        return map.get(userName);
     }
 
-    public static CategoryListUserMap from(JsonNode categories) {
-        CategoryListUserMap perUser = new CategoryListUserMap();
+    public static CategoryListMap from(JsonNode categories) {
+        CategoryListMap perUser = new CategoryListMap();
         for(JsonNode categoryNode: categories) {
             Category c = new Category(categoryNode.get("id").asInt(), categoryNode.get("name").asText());
             for(JsonNode userNode : categoryNode.get("users")) {
@@ -36,6 +38,15 @@ public class CategoryListUserMap {
             }
         }
         return perUser;
+    }
+
+    private static CategoryListMap defaultMap;
+
+    public static CategoryListMap getDefault() throws IOException {
+        if (defaultMap == null) {
+            defaultMap = CategoryListMap.from(Config.getDefault().getJsonNode("categories"));
+        }
+        return defaultMap;
     }
 
 }
