@@ -24,4 +24,15 @@ class CategoryTest {
         assertEquals(100, c.getId());
         assertEquals("freetalk", c.getName());
     }
+
+    @Test
+    @DisplayName("we can compare two categories")
+    void compare() {
+        Category c1 = new Category(100, "freetalk");
+        Category c2 = new Category(104, "health");
+
+        assertTrue(c1.equals(c1));
+        assertTrue(c1.equals(new Category(100, "freetalk")));
+        assertFalse(c2.equals(new Category(100, "freetalk")));
+    }
 }
