@@ -20,6 +20,10 @@ public class Config {
     private String mysqlUser;
     private String mysqlPassword;
 
+    public JsonNode getJsonNode(String path) {
+        return jsonRoot.path(path);
+    }
+
     public static Config from(String f) throws IOException {
         Config c = new Config();
         ObjectMapper m = new ObjectMapper();

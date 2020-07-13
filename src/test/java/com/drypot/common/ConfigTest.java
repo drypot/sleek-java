@@ -29,7 +29,7 @@ public class ConfigTest {
     @DisplayName("we can load config from file")
     public void loadConfigFromFile() throws IOException {
         Config c = Config.from(CommandLineArguments.getConfigPath());
-        assertEquals("sleek test", c.getAppName());
+        assertEquals("app test", c.getAppName());
         assertEquals(8001, c.getAppPort());
         assertEquals("http://file.sleek.dev:8080", c.getUploadSite());
         assertEquals("upload/sleek-test", c.getUploadDir());
@@ -42,12 +42,20 @@ public class ConfigTest {
     @DisplayName("we can load config from cache")
     public void loadConfigFromCache() throws IOException {
         Config c = Config.fromCache();
-        assertEquals("sleek test", c.getAppName());
+        assertEquals("app test", c.getAppName());
         assertEquals(8001, c.getAppPort());
         assertEquals("http://file.sleek.dev:8080", c.getUploadSite());
         assertEquals("upload/sleek-test", c.getUploadDir());
         assertEquals("sleek_test", c.getMysqlDatabase());
         assertEquals("drypot", c.getMysqlUser());
         assertEquals("", c.getMysqlPassword());
+    }
+
+    @Test
+    @DisplayName("we can use getJsonNode")
+    void getJsonNode() throws IOException {
+        Config c = Config.fromCache();
+        assertEquals("app test", c.getJsonNode("appName").asText());
+        assertEquals(8001, c.getJsonNode("appPort").asInt());
     }
 }
