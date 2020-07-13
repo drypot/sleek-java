@@ -5,10 +5,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserList {
+public class UserMap {
     Map<String, User> users;
 
-    public UserList() {
+    public UserMap() {
         users = new HashMap<String, User>();
     }
 
@@ -20,14 +20,15 @@ public class UserList {
         return users.get(name);
     }
 
-    public static UserList from(JsonNode usersNode) {
-        UserList l = new UserList();
-        for(JsonNode node : usersNode) {
-            JsonNode admin = node.get("admin");
+    public static UserMap from(JsonNode users) {
+        UserMap l = new UserMap();
+        for(JsonNode user : users) {
+            JsonNode admin = user.get("admin");
+            boolean isAdmin = admin == null ? false : admin.asBoolean();
             l.put(new User(
-                node.get("name").asText(),
-                node.get("hash").asText(),
-                admin != null ? admin.asBoolean() : false
+                user.get("name").asText(),
+                user.get("hash").asText(),
+                isAdmin
             ));
         }
         return l;

@@ -1,7 +1,6 @@
 package com.drypot.sleek;
 
 import com.drypot.common.Config;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -9,18 +8,18 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UserListTest {
+class UserMapTest {
 
     @Test
     @DisplayName("we can create userList")
     void create() {
-        UserList l = new UserList();
+        UserMap l = new UserMap();
     }
 
     @Test
     @DisplayName("we can put/get user")
     void putUser() {
-        UserList l = new UserList();
+        UserMap l = new UserMap();
 
         User u1 = new User("user1", "hash1", false);
         l.put(u1);
@@ -43,7 +42,7 @@ class UserListTest {
     @DisplayName("we can load userList from config")
     void loadFromConfig() throws IOException {
         Config c = Config.fromCache();
-        UserList l = UserList.from(c.getJsonNode("users"));
+        UserMap l = UserMap.from(c.getJsonNode("users"));
         User u;
 
         u = l.get("user");
