@@ -2,8 +2,7 @@ package com.drypot.common;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +10,11 @@ import java.io.IOException;
 @Data
 @NoArgsConstructor
 public class Config {
+
+    @Setter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE)
     private JsonNode jsonRoot;
+
     private String appName = "";
     private int appPort;
     private String uploadSite;

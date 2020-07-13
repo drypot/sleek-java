@@ -43,7 +43,7 @@ class UserListTest {
     @DisplayName("we can load userList from config")
     void loadFromConfig() throws IOException {
         Config c = Config.fromCache();
-        UserList l = UserList.from(c.getJsonRoot().get("users"));
+        UserList l = UserList.from(c.getJsonNode("users"));
         User u;
 
         u = l.get("user");
