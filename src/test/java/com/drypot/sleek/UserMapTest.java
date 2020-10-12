@@ -1,6 +1,5 @@
 package com.drypot.sleek;
 
-import com.drypot.common.Config;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -41,7 +40,7 @@ class UserMapTest {
     @Test
     @DisplayName("we can load userList from config")
     void loadFromConfig() throws IOException {
-        Config config = Config.getDefault();
+        UserLoader config = UserLoader.getDefault();
         UserMap map = UserMap.from(config.getJsonNode("users"));
         User u;
 

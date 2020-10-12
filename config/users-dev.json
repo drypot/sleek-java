@@ -1,31 +1,15 @@
 {
-  "appName": "app test",
-  "appPort": 8001,
-  "cookieSecret": "o;iejf832ndvs",
-
-  "uploadSite": "http://file.sleek.dev:8080",
-  "uploadDir": "upload/sleek-test",
-
-  "mongodb": "sleek-test",
-  "mongoUser": "",
-  "mongoPassword": "",
-
-  "mysqlDatabase": "sleek_test",
-  "mysqlUser": "drypot",
-  "mysqlPassword": "",
-
   "users": [
     { "name": "user", "hash": "$2a$10$ku7nymS.1CPd8jMttYXZMe4wVWweWr1EqaYst75tzimQh2iAAqvZW" },
-    { "name": "cheater", "hash": "$2a$10$ZXzPk9TDWLTbdUt4A3KAXOVK5ed5zsnRHiGeGExA5xSVvD3ZWURDK" },
+    { "name": "cheater", "hash": "$2a$10$UujeEPUXiV/ipq9Cl3htK.KrWLKHdxQcM5VFCBoxBV5pdNG3C2Exy" },
     { "name": "admin", "hash": "$2a$10$vIl4m5eO71dCHQmZH7/BxOwLIHZ/9NYASyosTHgtLEO/MRlCATU9S", "admin": true }
   ],
 
   "categories": [
     { "id": 100, "name": "freetalk", "users": ["user", "cheater"] },
+    { "id": 106, "name": "funny", "users": ["user", "cheater"] },
     { "id": 104, "name": "health", "users": ["user", "cheater"] },
     { "id": 401, "name": "trade", "users": ["user", "cheater"] },
-    { "id": 400, "name": "house109", "users": ["user", "cheater"] },
-    { "id": 300, "name": "house", "users": ["user", "cheater"] },
 
     { "id": 102, "name": "blackkid", "users": ["user", "cheater"] },
     { "id": 220, "name": "epicure", "users": ["user", "cheater"] },
@@ -51,5 +35,11 @@
 
     { "id": 40, "name": "recycle bin", "users": [] },
     { "id": 50, "name": "test", "users": [] }
+  ],
+
+  "unused": [
+    { "id": 400, "name": "house109", "users": ["user", "cheater"] },
+    { "id": 300, "name": "house", "users": ["user", "cheater"] }
   ]
 }
+

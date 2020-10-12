@@ -1,6 +1,5 @@
 package com.drypot.sleek;
 
-import com.drypot.common.Config;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.io.IOException;
@@ -44,7 +43,7 @@ public class CategoryListMap {
 
     public static CategoryListMap getDefault() throws IOException {
         if (defaultMap == null) {
-            defaultMap = CategoryListMap.from(Config.getDefault().getJsonNode("categories"));
+            defaultMap = CategoryListMap.from(UserLoader.getDefault().getJsonNode("categories"));
         }
         return defaultMap;
     }

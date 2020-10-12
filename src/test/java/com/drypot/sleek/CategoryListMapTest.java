@@ -1,6 +1,5 @@
 package com.drypot.sleek;
 
-import com.drypot.common.Config;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +32,7 @@ class CategoryListMapTest {
     @Test
     @DisplayName("we can load categoryListMap from Json")
     void loadFromJson() throws IOException {
-        Config config = Config.getDefault();
+        UserLoader config = UserLoader.getDefault();
         CategoryListMap map = CategoryListMap.from(config.getJsonNode("categories"));
         CategoryList l;
 

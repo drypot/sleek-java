@@ -1,4 +1,4 @@
-package com.drypot.common;
+package com.drypot.sleek;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @Data
 @NoArgsConstructor
-public class Config {
+public class UserLoader {
 
     @Setter(AccessLevel.NONE)
     @Getter(AccessLevel.NONE)
@@ -27,8 +27,8 @@ public class Config {
         return jsonRoot.path(path);
     }
 
-    public static Config from(String f) throws IOException {
-        Config c = new Config();
+    public static UserLoader from(String f) throws IOException {
+        UserLoader c = new UserLoader();
         ObjectMapper m = new ObjectMapper();
         c.jsonRoot = m.readTree(new File(f));
         c.setAppName(c.jsonRoot.get("appName").asText());
@@ -41,10 +41,10 @@ public class Config {
         return c;
     }
 
-    private static Config defaultConfig;
-    public static Config getDefault() throws IOException {
+    private static UserLoader defaultConfig;
+    public static UserLoader getDefault() throws IOException {
         if (defaultConfig == null) {
-            defaultConfig = from(CommandLineArguments.getConfigPath());
+            defaultConfig = from("");
         }
         return defaultConfig;
     }

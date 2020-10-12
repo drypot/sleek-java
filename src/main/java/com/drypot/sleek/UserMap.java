@@ -1,6 +1,5 @@
 package com.drypot.sleek;
 
-import com.drypot.common.Config;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -42,7 +41,7 @@ public class UserMap {
 
     public static UserMap getDefault() throws IOException {
         if (defaultMap == null) {
-            defaultMap = UserMap.from(Config.getDefault().getJsonNode("users"));
+            defaultMap = UserMap.from(UserLoader.getDefault().getJsonNode("users"));
         }
         return defaultMap;
     }

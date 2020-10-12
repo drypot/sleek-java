@@ -3,4 +3,5 @@ target/
 !**/src/test/**/target/
 
 config/*live*.json
+config/*live*.properties
 tmp/

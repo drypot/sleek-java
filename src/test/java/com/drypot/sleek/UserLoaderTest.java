@@ -1,4 +1,4 @@
-package com.drypot.common;
+package com.drypot.sleek;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,19 +7,19 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ConfigTest {
+public class UserLoaderTest {
 
     @Test
     @DisplayName("we can create config")
     public void create() {
-        Config c = new Config();
+        UserLoader c = new UserLoader();
         assertEquals("", c.getAppName());
     }
 
     @Test
     @DisplayName("we can set properties")
     public void setProperties() {
-        Config c = new Config();
+        UserLoader c = new UserLoader();
         c.setAppName("new name");
         assertEquals("new name", c.getAppName());
     }
@@ -27,7 +27,7 @@ public class ConfigTest {
     @Test
     @DisplayName("we can load config from file")
     public void loadConfigFromFile() throws IOException {
-        Config c = Config.from(CommandLineArguments.getConfigPath());
+        UserLoader c = UserLoader.from("");
         assertEquals("app test", c.getAppName());
         assertEquals(8001, c.getAppPort());
         assertEquals("http://file.sleek.dev:8080", c.getUploadSite());
@@ -40,7 +40,7 @@ public class ConfigTest {
     @Test
     @DisplayName("we can get default config")
     public void loadConfigFromCache() throws IOException {
-        Config c = Config.getDefault();
+        UserLoader c = UserLoader.getDefault();
         assertEquals("app test", c.getAppName());
         assertEquals(8001, c.getAppPort());
         assertEquals("http://file.sleek.dev:8080", c.getUploadSite());
@@ -53,7 +53,7 @@ public class ConfigTest {
     @Test
     @DisplayName("we can use getJsonNode")
     void getJsonNode() throws IOException {
-        Config c = Config.getDefault();
+        UserLoader c = UserLoader.getDefault();
         assertEquals("app test", c.getJsonNode("appName").asText());
         assertEquals(8001, c.getJsonNode("appPort").asInt());
     }
