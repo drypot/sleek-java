@@ -8,9 +8,13 @@ Sleek Java 버전.
 
 Java, Spring MVC, MySQL.
 
-## 참고
+## Run
 
-[Sleek Node.js 버전](https://github.com/drypot/sleek)
+[RUN.md](RUN.md)
+
+## Sleek Node.js 버전
+
+<https://github.com/drypot/sleek>
 
 ## History
 
