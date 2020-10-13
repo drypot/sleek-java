@@ -2,6 +2,8 @@ package com.drypot.sleek;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class UserMapTest {
@@ -32,4 +34,30 @@ class UserMapTest {
         assertThat(map.get("user3")).isNull();
     }
 
+    @Test
+    void canFindUserWithPassword() throws IOException {
+        UserMap map = new UserMap();
+        User u;
+
+        u = new User("user", "$2a$10$ku7nymS.1CPd8jMttYXZMe4wVWweWr1EqaYst75tzimQh2iAAqvZW", false);
+        map.put(u);
+
+        u = new User("cheater", "$2a$10$ZXzPk9TDWLTbdUt4A3KAXOVK5ed5zsnRHiGeGExA5xSVvD3ZWURDK", false);
+        map.put(u);
+
+        u = new User("admin", "$2a$10$vIl4m5eO71dCHQmZH7/BxOwLIHZ/9NYASyosTHgtLEO/MRlCATU9S", true);
+        map.put(u);
+
+        u = map.findWithPassword("1");
+        assertThat(u.getName()).isEqualTo("user");
+
+        u = map.findWithPassword("2");
+        assertThat(u.getName()).isEqualTo("cheater");
+
+        u = map.findWithPassword("3");
+        assertThat(u.getName()).isEqualTo("admin");
+
+        u = map.findWithPassword("4");
+        assertThat(u).isNull();
+    }
 }

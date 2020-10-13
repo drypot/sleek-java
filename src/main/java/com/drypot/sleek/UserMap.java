@@ -1,10 +1,8 @@
 package com.drypot.sleek;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,29 +19,6 @@ public class UserMap {
 
     public User get(String name) {
         return map.get(name);
-    }
-
-    public static UserMap from(JsonNode users) {
-        UserMap l = new UserMap();
-        for(JsonNode user : users) {
-            JsonNode admin = user.get("admin");
-            boolean isAdmin = admin == null ? false : admin.asBoolean();
-            l.put(new User(
-                user.get("name").asText(),
-                user.get("hash").asText(),
-                isAdmin
-            ));
-        }
-        return l;
-    }
-
-    private static UserMap defaultMap;
-
-    public static UserMap getDefault() throws IOException {
-        if (defaultMap == null) {
-            defaultMap = UserMap.from(UserLoader.getDefault().getJsonNode("users"));
-        }
-        return defaultMap;
     }
 
     private static PasswordEncoder encoder = new BCryptPasswordEncoder();
