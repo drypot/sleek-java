@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ApplicationTests {
 
     @Autowired
-    Environment environment;
+    Environment env;
 
     @Test
     void trueShouldBeTrue() {
@@ -22,11 +22,12 @@ class ApplicationTests {
 
     @Test
     void profileShouldBeTest() {
-        assertThat(environment.getActiveProfiles()[0]).isEqualTo("test");
+        assertThat(env.getActiveProfiles()[0]).isEqualTo("test");
     }
 
     @Test
     void appNameShouldBeTest() {
-        assertThat(environment.getProperty("app.name")).isEqualTo("sleek test");
+        assertThat(env.getProperty("app.name")).isEqualTo("sleek test");
     }
+
 }
