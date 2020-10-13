@@ -1,38 +1,34 @@
 package com.drypot.sleek;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class CategoryTest {
 
     @Test
-    @DisplayName("we can create category")
-    void create() {
+    void canCreateCategory() {
         Category c = new Category();
-        assertEquals(0, c.getId());
-        assertEquals(null, c.getName());
+        assertThat(c.getId()).isEqualTo(0);
+        assertThat(c.getName()).isNull();
     }
 
     @Test
-    @DisplayName("we can set proeprties")
-    void setProperties() {
+    void canSetProperties() {
         Category c = new Category();
         c.setId(100);
         c.setName("freetalk");
-        assertEquals(100, c.getId());
-        assertEquals("freetalk", c.getName());
+        assertThat(c.getId()).isEqualTo(100);
+        assertThat(c.getName()).isEqualTo("freetalk");
     }
 
     @Test
-    @DisplayName("we can compare two categories")
-    void compare() {
+    void canCompareTwoCategoreis() {
         Category c1 = new Category(100, "freetalk");
         Category c2 = new Category(104, "health");
 
-        assertTrue(c1.equals(c1));
-        assertTrue(c1.equals(new Category(100, "freetalk")));
-        assertFalse(c2.equals(new Category(100, "freetalk")));
+        assertThat(c1.equals(c1)).isTrue();
+        assertThat(c1.equals(new Category(100, "freetalk"))).isTrue();
+        assertThat(c2.equals(new Category(100, "freetalk"))).isFalse();
     }
 }

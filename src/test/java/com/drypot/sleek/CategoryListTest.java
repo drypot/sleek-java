@@ -3,19 +3,17 @@ package com.drypot.sleek;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class CategoryListTest {
 
     @Test
-    @DisplayName("we can create categoryList")
-    void create() {
+    void canCreateCategoryList() {
         CategoryList l = new CategoryList();
     }
 
     @Test
-    @DisplayName("we can add category to categoryList")
-    void add() {
+    void canAddToCategoryList() {
         CategoryList l = new CategoryList();
         Category c;
 
@@ -23,17 +21,16 @@ class CategoryListTest {
         l.add(new Category(104, "health"));
 
         c = l.get(0);
-        assertEquals(100, c.getId());
-        assertEquals("freetalk", c.getName());
+        assertThat(c.getId()).isEqualTo(100);
+        assertThat(c.getName()).isEqualTo("freetalk");
 
         c = l.get(1);
-        assertEquals(104, c.getId());
-        assertEquals("health", c.getName());
+        assertThat(c.getId()).isEqualTo(104);
+        assertThat(c.getName()).isEqualTo("health");
     }
 
     @Test
-    @DisplayName("we can iterate categoryList")
-    void iterate() {
+    void canIterateCategoryList() {
         CategoryList l = new CategoryList();
         Category c = null;
         int count = 0;
@@ -45,19 +42,19 @@ class CategoryListTest {
             c = c1;
             count++;
         }
-        assertEquals(104, c.getId());
-        assertEquals("health", c.getName());
+        assertThat(c.getId()).isEqualTo(104);
+        assertThat(c.getName()).isEqualTo("health");
+        assertThat(count).isEqualTo(2);
     }
 
     @Test
-    @DisplayName("we can test contains")
-    void contains() {
+    void canTestContains() {
         CategoryList l = new CategoryList();
         l.add(new Category(100, "freetalk"));
         l.add(new Category(104, "health"));
 
-        assertTrue(l.contains(100));
-        assertTrue(l.contains(104));
-        assertFalse(l.contains(300));
+        assertThat(l.contains(100)).isTrue();
+        assertThat(l.contains(104)).isTrue();
+        assertThat(l.contains(300)).isFalse();
     }
 }

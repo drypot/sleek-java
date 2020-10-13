@@ -19,7 +19,7 @@ public class UserMapJsonLoaderTest {
     private JsonConfig config;
 
     @Test
-    public void canLoadUserMapFromJsonConfig() {
+    public void canLoadFromJsonConfig() {
         UserMap map = UserMapJsonLoader.loadFrom(config.getNode("users"));
         User u;
 

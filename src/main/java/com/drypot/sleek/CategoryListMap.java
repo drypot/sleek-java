@@ -22,30 +22,5 @@ public class CategoryListMap {
         return map.get(userName);
     }
 
-    public static CategoryListMap from(JsonNode categories) {
-        CategoryListMap perUser = new CategoryListMap();
-        for(JsonNode categoryNode: categories) {
-            Category c = new Category(categoryNode.get("id").asInt(), categoryNode.get("name").asText());
-            for(JsonNode userNode : categoryNode.get("users")) {
-                String userName = userNode.asText();
-                CategoryList l = perUser.get(userName);
-                if (l == null) {
-                    l = new CategoryList();
-                    perUser.put(userName, l);
-                }
-                l.add(c);
-            }
-        }
-        return perUser;
-    }
-
-    private static CategoryListMap defaultMap;
-
-    public static CategoryListMap getDefault() throws IOException {
-        if (defaultMap == null) {
-            defaultMap = CategoryListMap.from(UserLoader.getDefault().getJsonNode("categories"));
-        }
-        return defaultMap;
-    }
 
 }
