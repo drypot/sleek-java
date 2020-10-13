@@ -1,11 +1,11 @@
-package com.drypot.common;
+package com.drypot.sleek;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BCryptTest {
 
@@ -14,7 +14,7 @@ public class BCryptTest {
     void encode() {
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String encoded = encoder.encode("pass1");
-        assertEquals(60, encoded.length());
+        assertThat(encoded.length()).isEqualTo(60);
     }
 
     @Test
@@ -22,7 +22,7 @@ public class BCryptTest {
     void match() {
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         String encoded = encoder.encode("pass1");
-        assertTrue(encoder.matches("pass1", encoded));
-        assertFalse(encoder.matches("passX", encoded));
+        assertThat(encoder.matches("pass1", encoded)).isTrue();
+        assertThat(encoder.matches("passX", encoded)).isFalse();
     }
 }
