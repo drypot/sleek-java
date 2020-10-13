@@ -1,30 +1,28 @@
 package com.drypot.sleek;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class UserTest {
 
     @Test
-    @DisplayName("we can create user")
-    void create() {
+    void canCreateUser() {
         User u = new User();
-        assertEquals(null, u.getName());
-        assertEquals(null, u.getHash());
-        assertEquals(false, u.isAdmin());
+        assertThat(u.getName()).isNull();
+        assertThat(u.getHash()).isNull();
+        assertThat(u.isAdmin()).isFalse();
     }
 
     @Test
-    @DisplayName("we can set properties")
-    void setProperties() {
+    void canSetProperties() {
         User u = new User();
         u.setName("snowman");
         u.setHash("####");
         u.setAdmin(true);
-        assertEquals("snowman", u.getName());
-        assertEquals("####", u.getHash());
-        assertEquals(true, u.isAdmin());
+        assertThat(u.getName()).isEqualTo("snowman");
+        assertThat(u.getHash()).isEqualTo("####");
+        assertThat(u.isAdmin()).isTrue();
     }
+
 }
