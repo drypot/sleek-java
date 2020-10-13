@@ -1,0 +1,1 @@
+mvn test -Dspring-boot.run.profiles=test
