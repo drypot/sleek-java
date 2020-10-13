@@ -6,9 +6,13 @@ config/application-*.properties 파일을 참고해서 디비를 준비한다.
 
 ## Run
 
-    ...
+    $ bin/run-test
 
-추후 추가.
+전체 테스트.
+
+    $ bin/run-dev
+    
+dev 프로파일로 서버 실행.
 
 ## Spring profile
 
