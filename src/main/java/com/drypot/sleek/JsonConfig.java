@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Component
-public class JsonConfigLoader {
+public class JsonConfig {
 
     @Autowired
     private Environment env;

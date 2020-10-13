@@ -9,10 +9,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @ActiveProfiles("test")
-class JsonConfigLoaderTest {
+class JsonConfigTest {
 
     @Autowired
-    JsonConfigLoader loader;
+    JsonConfig loader;
 
     @Test
     void loaderExists() {
