@@ -21,6 +21,10 @@ public class UserMap {
         return map.get(name);
     }
 
+    public int size() {
+        return map.size();
+    }
+
     private static PasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public User findWithPassword(String password) {
