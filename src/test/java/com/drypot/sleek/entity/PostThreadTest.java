@@ -1,10 +1,9 @@
-package com.drypot.sleek;
+package com.drypot.sleek.entity;
 
-import com.drypot.sleek.PostThread;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PostThreadTest {
 

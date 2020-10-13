@@ -1,4 +1,4 @@
-package com.drypot.sleek;
+package com.drypot.sleek.entity;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

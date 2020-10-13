@@ -1,4 +1,4 @@
-package com.drypot.sleek;
+package com.drypot.sleek.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

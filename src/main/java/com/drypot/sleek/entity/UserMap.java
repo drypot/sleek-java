@@ -1,4 +1,4 @@
-package com.drypot.sleek;
+package com.drypot.sleek.entity;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;

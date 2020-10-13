@@ -1,6 +1,5 @@
-package com.drypot.sleek;
+package com.drypot.sleek.entity;
 
-import com.drypot.sleek.Post;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

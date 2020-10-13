@@ -1,8 +1,5 @@
-package com.drypot.sleek;
+package com.drypot.sleek.entity;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 

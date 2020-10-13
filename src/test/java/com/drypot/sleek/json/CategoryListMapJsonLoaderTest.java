@@ -1,5 +1,7 @@
-package com.drypot.sleek;
+package com.drypot.sleek.json;
 
+import com.drypot.sleek.entity.CategoryList;
+import com.drypot.sleek.entity.CategoryListMap;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

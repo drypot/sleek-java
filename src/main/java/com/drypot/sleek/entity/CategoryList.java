@@ -1,4 +1,4 @@
-package com.drypot.sleek;
+package com.drypot.sleek.entity;
 
 import java.util.ArrayList;
 import java.util.Iterator;

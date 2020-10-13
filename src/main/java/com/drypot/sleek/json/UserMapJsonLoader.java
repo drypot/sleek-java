@@ -1,5 +1,7 @@
-package com.drypot.sleek;
+package com.drypot.sleek.json;
 
+import com.drypot.sleek.entity.User;
+import com.drypot.sleek.entity.UserMap;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class UserMapJsonLoader {
