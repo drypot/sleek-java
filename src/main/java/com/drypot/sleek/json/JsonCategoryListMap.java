@@ -5,7 +5,7 @@ import com.drypot.sleek.entity.CategoryList;
 import com.drypot.sleek.entity.CategoryListMap;
 import com.fasterxml.jackson.databind.JsonNode;
 
-public class CategoryListMapJsonLoader {
+public class JsonCategoryListMap {
 
     public static CategoryListMap loadFrom(JsonNode categories) {
         CategoryListMap perUser = new CategoryListMap();

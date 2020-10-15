@@ -4,7 +4,7 @@ import com.drypot.sleek.entity.User;
 import com.drypot.sleek.entity.UserMap;
 import com.fasterxml.jackson.databind.JsonNode;
 
-public class UserMapJsonLoader {
+public class JsonUserMap {
 
     public static UserMap loadFrom(JsonNode users) {
         UserMap l = new UserMap();

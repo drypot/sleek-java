@@ -4,21 +4,23 @@ import com.drypot.sleek.entity.User;
 import com.drypot.sleek.entity.UserMap;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.json.JsonTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+@JsonTest
+@Import(JsonConfig.class)
 @ActiveProfiles("test")
-public class UserMapJsonLoaderTest {
+public class JsonUserMapTest {
 
     @Autowired
-    private JsonConfig config;
+    private JsonAppConfig config;
 
     @Test
     public void canLoadFromJsonConfig() {
-        UserMap map = UserMapJsonLoader.loadFrom(config.getNode("users"));
+        UserMap map = JsonUserMap.loadFrom(config.getNode("users"));
         User u;
 
         u = map.get("user");
