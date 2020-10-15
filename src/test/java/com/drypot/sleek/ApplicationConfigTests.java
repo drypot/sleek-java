@@ -9,9 +9,9 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = {})
+@SpringBootTest(classes = ApplicationConfig.class)
 @ActiveProfiles("test")
-class ApplicationTests {
+class ApplicationConfigTests {
 
     @Autowired
     ApplicationContext context;
