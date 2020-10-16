@@ -9,9 +9,9 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = ApplicationConfig.class)
+@SpringBootTest(classes = EmptyConfig.class)
 @ActiveProfiles("test")
-class ApplicationConfigTests {
+class ApplicationTests {
 
     @Autowired
     ApplicationContext context;
@@ -43,5 +43,4 @@ class ApplicationConfigTests {
     void appNameShouldBeTest() {
         assertThat(env.getProperty("app.name")).isEqualTo("sleek test");
     }
-
 }
