@@ -10,11 +10,11 @@ import org.springframework.core.env.Environment;
 @SpringBootApplication
 public class Application {
 
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
-    Logger logger = LoggerFactory.getLogger(Application.class);
 
     private final ApplicationContext context;
 
@@ -23,8 +23,7 @@ public class Application {
     public Application(ApplicationContext context, Environment env) {
         this.context = context;
         this.env = env;
-        logger.info("app.name = " + env.getProperty("app.name"));
-        logger.info("app.port = " + env.getProperty("app.port", Integer.class));
+        log.info("app.name = " + env.getProperty("app.name"));
     }
 
 }
