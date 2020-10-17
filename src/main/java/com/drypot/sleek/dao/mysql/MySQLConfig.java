@@ -1,4 +1,4 @@
-package com.drypot.sleek.mysql;
+package com.drypot.sleek.dao.mysql;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

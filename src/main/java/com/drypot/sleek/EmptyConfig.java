@@ -1,8 +1,8 @@
 package com.drypot.sleek;
 
-import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootConfiguration
+@Configuration
 //@EnableAutoConfiguration
 //@ComponentScan
 public class EmptyConfig {
