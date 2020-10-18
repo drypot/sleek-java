@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @JdbcTest
 @AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("test")
-class MySqlTest {
+class MySqlDBTest {
 
     @Autowired
     Environment env;
