@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
 @NoArgsConstructor
@@ -34,4 +35,13 @@ public class Post {
         fileNameList.remove(name);
     }
 
+    private static AtomicInteger idSeed = new AtomicInteger();
+
+    public static void setIdSeed(int newValue) {
+        idSeed.set(newValue + 1);
+    }
+
+    public static int getNewId() {
+        return idSeed.getAndIncrement();
+    }
 }

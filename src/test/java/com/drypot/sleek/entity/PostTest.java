@@ -3,6 +3,7 @@ package com.drypot.sleek.entity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PostTest {
@@ -15,16 +16,22 @@ public class PostTest {
     }
 
     @Test
-    @DisplayName("we can create post with builder")
-    public void createPostWithBuilder() {
+    void canGetNewId() {
+        Post.setIdSeed(10);
+        assertThat(Post.getNewId()).isEqualTo(11);
+        Post.setIdSeed(20);
+        assertThat(Post.getNewId()).isEqualTo(21);
+    }
+
+    @Test
+    public void canCreatePostWithBuilder() {
         Post p = Post.builder().id(10).text("hello").build();
         assertEquals(10, p.getId());
         assertEquals("hello", p.getText());
     }
 
     @Test
-    @DisplayName("we can set post properties")
-    public void setProperties() {
+    public void canSetProperties() {
         Post p = new Post();
 
         assertEquals(0, p.getId());
