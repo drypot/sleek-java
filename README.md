@@ -6,11 +6,7 @@ Sleek Java 버전.
 클린 아키텍쳐를 읽고 다시 만들기 시작.  
 현재 작업중.
 
-Java, Spring MVC, MySQL.
-
-## Run
-
-[RUN.md](RUN.md)
+다른 문서들은 doc 디렉토리에.
 
 ## Sleek Node.js 버전
 
@@ -18,7 +14,7 @@ Java, Spring MVC, MySQL.
 
 ## History
 
-2020.04 Java 버전을 다시 만들기 시작.
+2020.04 Java, Spring MVC, MySQL 버전을 다시 만들기 시작.
 
 2019.04 Node.js, MySQL, MongoDB 를 MySQL 로 이전.
 
