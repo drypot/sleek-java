@@ -1,4 +1,4 @@
-package com.drypot.sleek.entity;
+package com.drypot.sleek.post;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Category {
-    private int id;
+public class User {
     private String name;
+    private String hash;
+    private boolean admin;
 }

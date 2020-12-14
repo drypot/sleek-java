@@ -1,6 +1,6 @@
 package com.drypot.sleek.dao.mysql;
 
-import com.drypot.sleek.entity.PostThread;
+import com.drypot.sleek.post.PostThread;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

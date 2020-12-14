@@ -1,4 +1,4 @@
-package com.drypot.sleek.entity;
+package com.drypot.sleek.post;
 
 import org.junit.jupiter.api.Test;
 

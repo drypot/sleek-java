@@ -1,7 +1,7 @@
 package com.drypot.sleek.json;
 
-import com.drypot.sleek.entity.User;
-import com.drypot.sleek.entity.UserMap;
+import com.drypot.sleek.post.User;
+import com.drypot.sleek.post.UserMap;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class JsonUserMap {

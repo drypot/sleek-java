@@ -1,8 +1,8 @@
 package com.drypot.sleek.json;
 
-import com.drypot.sleek.entity.Category;
-import com.drypot.sleek.entity.CategoryList;
-import com.drypot.sleek.entity.CategoryListMap;
+import com.drypot.sleek.post.Category;
+import com.drypot.sleek.post.CategoryList;
+import com.drypot.sleek.post.CategoryListMap;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class JsonCategoryListMap {

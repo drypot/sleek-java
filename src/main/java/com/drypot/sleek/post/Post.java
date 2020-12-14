@@ -1,4 +1,4 @@
-package com.drypot.sleek.entity;
+package com.drypot.sleek.post;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,25 +6,33 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PostThread {
+public class Post {
 
     private int id;
-    private int categoryId;
-    private int hit;
-    private int length;
-    private LocalDateTime cdate;
-    private LocalDateTime udate;
+    private int threadId;
     private String userName;
-    private String title;
+    private String text;
+    private LocalDateTime cdate;
+    private boolean visible;
+    private List<String> fileNameList;
 
-    public boolean postIsFirstPost(Post p) {
-        return cdate.equals(p.getCdate());
+    public void addFileName(String name) {
+        if (fileNameList == null) {
+            fileNameList = new ArrayList<String>(3);
+        }
+        fileNameList.add(name);
+    }
+
+    public void removeFileName(String name) {
+        fileNameList.remove(name);
     }
 
     private static AtomicInteger idSeed = new AtomicInteger();
@@ -36,5 +44,4 @@ public class PostThread {
     public static int getNewId() {
         return idSeed.getAndIncrement();
     }
-
 }
